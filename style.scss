@@ -1,0 +1,289 @@
+$base-color: #24053E;
+$second-base-color: #44FFA1;
+$light-base-color: #584D62;
+$lighter-base-color: #FCF8FF;
+$white: #FFFFFF;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hidden {
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1280px;
+}
+h1 {
+  font-size: 80px;
+  line-height: 80px;
+  font-family: fraunces, serif;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 56px;
+  line-height: 64px;
+  font-family: fraunces, serif;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 32px;
+  line-height: 40px;
+  font-family: fraunces, serif;
+  font-weight: bold;
+}
+
+p, a {
+  font-size: 18px;
+  line-height: 32px;
+  font-family: manrope, sans-serif;
+  font-weight: normal;
+}
+
+.svg {
+  &-background {
+    width: 0;
+    height: 0;
+  }
+}
+
+.background {
+  position: relative;
+  padding: 2.5rem;
+  clip-path: url(#my-clip-path);
+
+  &--hero {
+    background-color: $base-color;
+    color: white;
+  }
+
+  &--about {
+    margin-top: -5rem;
+    background-color: $lighter-base-color;
+    z-index: -1;
+  }
+}
+button {
+  padding: 1rem 2rem;
+  border: 1px solid $second-base-color;
+  background-color: $second-base-color;
+  cursor: pointer;
+  transition: .3s;
+
+  &:hover {
+    color: $second-base-color;
+    background-color: transparent;
+  }
+}
+
+.decor {
+  width: 350px;
+  position: absolute;
+
+  &--left {
+    right: 91%;
+    top: 40px;
+  }
+
+  &--right {
+    left: 89%;
+    top: 60px;
+  }
+}
+
+.nav {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+
+  &__apply {
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px $second-base-color solid;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      color: $second-base-color;
+    }
+  }
+}
+
+.introduction {
+  margin: 3.5rem auto 10rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    max-width: 600px;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  &__highlight-text {
+    text-decoration: underline;
+    text-decoration-color: $second-base-color;
+  }
+}
+
+.phone-background {
+  width: 70%;
+  max-width: 750px;
+  min-width: 360px;
+  margin-top: -120px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+@media (min-width: 42.5rem) {
+  .introduction {
+    margin-bottom: 15rem;
+  }
+  .phone-background {
+    margin-top: -230px;
+  }
+}
+.about{
+  margin-top: 15rem;
+  margin-bottom: 4rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  text-align: center;
+}
+.section{
+  margin-bottom: .5rem;
+  &__number{
+    margin: 0 auto 2.5rem auto;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+  }
+  &__title{
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 50rem){
+  .about{
+    margin-top: 20rem;
+  }
+  .section{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    &__number{
+      margin: 0 auto;
+      flex-shrink: 0;
+    }
+    &__description{
+      flex-grow: 1;
+    }
+  }
+}
+@media (min-width: 75rem){
+  .about{
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+  }
+  .section{
+    display: block;
+    &__number{
+      margin: 0 auto 1.5rem auto;
+    }
+  }
+}
+.author{
+  margin-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__selfie{
+    width: 90%;
+  }
+  &__img{
+    margin-top: 3.5rem;
+    margin-bottom: -3rem;
+    width: 100%;
+  }
+  &__about{
+    padding: 1.75rem;
+    background-color: $base-color;
+    text-align: center;
+    color: white;
+  }
+  &__title{
+    margin-bottom: 1rem;
+  }
+  &__description{
+    margin-bottom: 2.5rem;
+  }
+  &__decor{
+    display: none;
+  }
+}
+@media (min-width: 42.5rem) {
+  .author{
+    margin-top: 10rem;
+    flex-direction: row;
+    justify-content: center;
+    &__selfie{
+      width: 50%;
+      max-width: 250px;
+      flex-shrink: 0;
+    }
+    &__img{
+      position: relative;
+      left: 3rem;
+      top: -12.5rem;
+      z-index: -1;
+    }
+    &__about{
+      position: relative;
+      max-width: 750px;
+      text-align: left;
+    }
+    &__decor{
+      display: block;
+      position: absolute;
+      bottom: -55px;
+      right: 35px;
+    }
+  }
+}
+@media (min-width: 80rem){
+  .author{
+    &__selfie{
+      max-width: 500px;
+    }
+    &__img{
+      top: -10rem;
+    }
+  }
+ }
+.footer{
+  max-width: 100px;
+  margin: 0 auto 2.5rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  &__logo{
+    flex-grow: 0;
+  }
+  &__social{
+    display: flex;
+    justify-content: space-between;
+  }
+}
